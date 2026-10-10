@@ -7,6 +7,14 @@ export const Mascot: React.FC<{
 	style?: React.CSSProperties;
 }> = ({ expression, className, style }) => {
 	return (
-		<SyncSVG src={staticFile(`mascots/sulo-${expression}.svg`)} className={className ? `${className} [&>svg]:w-full [&>svg]:h-full [&>svg]:object-contain` : `[&>svg]:w-full [&>svg]:h-full [&>svg]:object-contain`} style={style} />
+		<SyncSVG
+			src={staticFile(`mascots/sulo-${expression}.svg`)}
+			className={
+				className
+					? `${className} [&>svg]:h-full [&>svg]:w-full [&>svg]:object-contain`
+					: `[&>svg]:h-full [&>svg]:w-full [&>svg]:object-contain`
+			}
+			style={style}
+		/>
 	);
 };

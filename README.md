@@ -1,55 +1,65 @@
-# Remotion video
+# Sulok Launch Video 🎬
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+This repository contains the programmatic launch video for **[Sulok](https://sulok-app.vercel.app/)**, built entirely in code using [React](https://reactjs.org/) and [Remotion](https://www.remotion.dev/).
 
-Welcome to your Remotion project!
+Sulok is a modern bookmarking and knowledge management tool—"Your corner of the web." This video demonstrates its core features: **Saving, Organizing, and Rediscovering** links, culminating in a dynamic and highly-animated launch sequence.
 
-## Commands
+## 🛠️ Tech Stack
 
-**Install Dependencies**
+- **[Remotion](https://www.remotion.dev/)**: For rendering React components into an MP4 video.
+- **[React](https://reactjs.org/)**: For component architecture and state-driven animations.
+- **[Tailwind CSS (v4)](https://tailwindcss.com/)**: For rapid and scalable styling.
+- **Spring Physics**: heavily utilizing `spring()` and `interpolate()` for organic, fluid animations.
+- **Synchronized SVG Animations**: Custom `SyncSVG` component to ensure CSS animations embedded in external SVGs perfectly sync with the Remotion frame clock during rendering.
 
-```console
-npm i --loglevel=error
+## 🚀 Getting Started
+
+### 1. Install Dependencies
+
+```bash
+npm install
 ```
 
-**Start Preview**
+### 2. Start the Remotion Studio
 
-```console
+To preview the video, adjust timings, and inspect individual scenes:
+
+```bash
 npm run dev
 ```
 
-**Render video**
+This will open the Remotion Studio in your browser where you can scrub through the timeline.
 
-```console
-npx remotion render
+### 3. Render the Video
+
+To export the final high-quality `.mp4` video file:
+
+```bash
+npm run build
 ```
 
-**Upgrade Remotion**
+Or use the CLI command directly for specific formats:
 
-```console
-npx remotion upgrade
+```bash
+npx remotion render src/index.ts SulokLaunchVideo out/sulok-launch-video.mp4 --pixel-format=yuv444p --color-space="bt709"
 ```
 
-## Docs
+## 🎥 Scenes Breakdown
 
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
+1. **OpeningChaos**: A massive cluster of links filling the screen to establish the "problem" of a disorganized web.
+2. **TheProblemExplained**: "The web is messy. We built a corner for it."
+3. **SulokReveal**: Introduction of the Sulok brand and the sleepy Sulo mascot.
+4. **SaveLinkScene**: Highlighting the quick-save and smart clipboard features.
+5. **OrganizeLinksScene**: Showcasing drag-and-drop organization.
+6. **RediscoverScene**: Demonstrating the Command Palette for instant recall.
+7. **PreCloseScene**: A dynamic sequence summarizing the workflow, culminating in a massive zoom-in through the search icon.
+8. **ClosingScene**: The final lockup featuring a bouncy collision between Sulo and the URL badge, ending with an organic dark slime transition.
 
-## Help
+## 💡 Notes
 
-We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
+- All animations are timeline-based using `useCurrentFrame()` to ensure 100% deterministic rendering.
+- Animated SVGs (like the Sulo mascot and feature mockups) are strictly synchronized to the Remotion clock via a custom injection technique (`SyncSVG.tsx`).
 
-## Issues
+---
 
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
-
-## License
-
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
-# sulok-launch-video
+_Built with ❤️ for Sulok._

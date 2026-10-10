@@ -3,7 +3,11 @@ import { continueRender, delayRender, useCurrentFrame, useVideoConfig } from "re
 
 const cache: Record<string, string> = {};
 
-export const SyncSVG: React.FC<{ src: string; className?: string; style?: React.CSSProperties }> = ({ src, className, style }) => {
+export const SyncSVG: React.FC<{
+	src: string;
+	className?: string;
+	style?: React.CSSProperties;
+}> = ({ src, className, style }) => {
 	const [svgContent, setSvgContent] = useState<string | null>(cache[src] || null);
 	const [handle] = useState(() => delayRender());
 	const frame = useCurrentFrame();
@@ -32,7 +36,7 @@ export const SyncSVG: React.FC<{ src: string; className?: string; style?: React.
 
 	const html = useMemo(() => {
 		if (!svgContent) return null;
-		
+
 		// Inject a style block at the end of the SVG to freeze all animations
 		// at the exact current frame time.
 		const styleInject = `
@@ -43,17 +47,11 @@ export const SyncSVG: React.FC<{ src: string; className?: string; style?: React.
 			}
 		</style>
 		`;
-		
-		return svgContent.replace('</svg>', `${styleInject}</svg>`);
+
+		return svgContent.replace("</svg>", `${styleInject}</svg>`);
 	}, [svgContent, timeInSeconds]);
 
 	if (!html) return null;
 
-	return (
-		<div 
-			className={className}
-			style={style}
-			dangerouslySetInnerHTML={{ __html: html }} 
-		/>
-	);
+	return <div className={className} style={style} dangerouslySetInnerHTML={{ __html: html }} />;
 };
