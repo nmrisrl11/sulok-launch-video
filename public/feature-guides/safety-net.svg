@@ -1,0 +1,267 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 288" width="340" height="288">
+  <defs>
+    <style>
+      /* <![CDATA[ */
+      @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&display=swap');
+
+      :root {
+        /* Sepia Theme */
+        --background: #f4ecd8;
+        --foreground: #4a3c31;
+        --card: #f9f3e5;
+        --card-foreground: #4a3c31;
+        --popover: #f9f3e5;
+        --popover-foreground: #4a3c31;
+        --muted: #e8dfca;
+        --muted-foreground: #7c6f64;
+        --border: #dbcdb0;
+        --primary: #4a3c31;
+        --primary-foreground: #f4ecd8;
+        --font-sans: "Manrope", sans-serif;
+        --font-heading: "Fraunces", serif;
+      }
+      
+      text { font-family: var(--font-sans); }
+      
+      .wrapper-bg { fill: var(--muted); fill-opacity: 0.2; stroke: var(--border); stroke-opacity: 0.6; stroke-width: 1; }
+      
+      .text-sm { font-size: 14px; }
+      .text-xs { font-size: 11px; }
+      .font-mono { font-family: monospace; }
+      .font-medium { font-weight: 500; }
+      .font-semibold { font-weight: 600; }
+      
+      .fill-foreground { fill: var(--foreground); color: var(--foreground); }
+      .fill-background { fill: var(--background); color: var(--background); }
+      .fill-muted { fill: var(--muted); color: var(--muted); }
+      .fill-muted-foreground { fill: var(--muted-foreground); color: var(--muted-foreground); }
+      .fill-white { fill: #ffffff; }
+      
+      .text-muted-foreground { stroke: var(--muted-foreground); fill: none; color: var(--muted-foreground); }
+      .stroke-foreground { stroke: var(--foreground); fill: none; color: var(--foreground); }
+      .border-stroke { stroke: var(--border); stroke-width: 1; }
+      
+      .text-green { color: #16a34a; fill: #16a34a; }
+      
+      .opacity-15 { opacity: 0.15; }
+      .opacity-30 { opacity: 0.3; }
+      .opacity-60 { opacity: 0.6; }
+
+      .itemScaleAnim { animation: itemScaleAnim 4s infinite cubic-bezier(0.2, 0.8, 0.2, 1); transform-origin: 154px 33px; }
+      .itemBgAnim { animation: itemBgAnim 4s infinite cubic-bezier(0.2, 0.8, 0.2, 1); }
+      .actionGroupAnim { animation: actionGroupAnim 4s infinite cubic-bezier(0.2, 0.8, 0.2, 1); }
+      .restoreBtnAnim { animation: restoreBtnAnim 4s infinite cubic-bezier(0.2, 0.8, 0.2, 1); }
+      .restoreBtnIconAnim { animation: restoreBtnIconAnim 4s infinite cubic-bezier(0.2, 0.8, 0.2, 1); }
+      .bottomLinksAnim { animation: bottomLinksAnim 4s infinite cubic-bezier(0.2, 0.8, 0.2, 1); }
+      .toastAnim { animation: toastAnim 4s infinite cubic-bezier(0.2, 0.8, 0.2, 1); }
+      .cursorAnim { animation: cursorAnim 4s infinite cubic-bezier(0.2, 0.8, 0.2, 1); }
+      .pingAnim { animation: pingAnim 4s infinite cubic-bezier(0, 0, 0.2, 1); }
+
+      @keyframes itemScaleAnim {
+        0%, 65% { transform: translate(0, 132px) scale(1); opacity: 1; }
+        67.5%, 100% { transform: translate(0, 132px) scale(0.95); opacity: 0; }
+      }
+
+      @keyframes itemBgAnim {
+        0%, 20% { fill: transparent; stroke: transparent; filter: none; }
+        25%, 100% { fill: var(--background); stroke: rgba(219, 205, 176, 0.5); filter: url(#shadow-sm); }
+      }
+
+      @keyframes actionGroupAnim {
+        0%, 20% { opacity: 0; filter: none; }
+        25%, 65% { opacity: 1; filter: url(#shadow-sm); }
+        67.5%, 100% { opacity: 0; filter: none; }
+      }
+
+      @keyframes restoreBtnAnim {
+        0%, 35% { fill: transparent; }
+        40%, 65% { fill: var(--muted); }
+        67.5%, 100% { fill: transparent; }
+      }
+
+      @keyframes restoreBtnIconAnim {
+        0%, 35% { color: var(--muted-foreground); fill: var(--muted-foreground); }
+        40%, 65% { color: var(--foreground); fill: var(--foreground); }
+        67.5%, 100% { color: var(--muted-foreground); fill: var(--muted-foreground); }
+      }
+
+      @keyframes bottomLinksAnim {
+        0%, 65% { transform: translate(0, 208px); }
+        70%, 100% { transform: translate(0, 132px); } 
+      }
+
+      @keyframes toastAnim {
+        0%, 70% { opacity: 0; transform: translate(110px, 260px) scale(0.95); }
+        75%, 95% { opacity: 1; transform: translate(110px, 240px) scale(1); }
+        100% { opacity: 0; transform: translate(110px, 260px) scale(0.95); }
+      }
+
+      @keyframes cursorAnim {
+        0%, 15% { transform: translate(250px, 280px) scale(1); opacity: 0; }
+        25%, 35% { transform: translate(170px, 178px) scale(1); opacity: 1; }
+        40%, 50% { transform: translate(264px, 178px) scale(1); opacity: 1; }
+        55%, 65% { transform: translate(264px, 178px) scale(0.95); opacity: 1; }
+        70%, 100% { transform: translate(264px, 178px) scale(0.95); opacity: 0; }
+      }
+
+      @keyframes pingAnim {
+        0%, 54% { transform: scale(1); opacity: 0; }
+        55% { transform: scale(1); opacity: 0.4; }
+        65%, 100% { transform: scale(2); opacity: 0; }
+      }
+      /* ]]> */
+    </style>
+
+    <filter id="shadow-sm" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000" flood-opacity="0.05" />
+    </filter>
+    
+    <filter id="shadow-toast" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.1" />
+    </filter>
+
+    <svg id="folder-icon" viewBox="0 0 64 64">
+      <path d="m59.61 10.69h-29.43c-1.2 0-2.35-.49-3.18-1.36l-3.76-3.94c-.83-.87-1.98-1.36-3.18-1.36h-15.67c-2.43 0-4.39 1.96-4.39 4.38v41.88c0 2.42 1.96 4.39 4.39 4.39h55.22c2.42 0 4.39-1.96 4.39-4.39v-35.21c0-2.42-1.96-4.39-4.39-4.39z" fill="#56b2e3" />
+      <path d="m57.26 15.07h-50.52c-1.83 0-3.32 1.49-3.32 3.32v33.48c0 1.84 1.49 3.32 3.32 3.32h50.52c1.83 0 3.32-1.49 3.32-3.32v-33.47c0-1.84-1.48-3.33-3.32-3.33z" fill="#ffffff" />
+      <path d="m59.61 20.42h-55.22c-2.43 0-4.39 1.96-4.39 4.39v30.78c0 2.42 1.96 4.39 4.39 4.39h55.22c2.42 0 4.39-1.96 4.39-4.39v-30.78c0-2.43-1.96-4.39-4.39-4.39z" fill="#98cfef" />
+    </svg>
+
+    <svg id="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+      <path d="M2 12h20"/>
+    </svg>
+
+    <svg id="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="m16 9-5.5 5.5L8 12"/>
+    </svg>
+
+    <svg id="mouse-pointer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4.037 4.688a.495.495 0 0 1 .651-.651l16 6.5a.5.5 0 0 1-.063.947l-6.124 1.58a2 2 0 0 0-1.438 1.435l-1.579 6.126a.5.5 0 0 1-.947.063z"/>
+    </svg>
+
+    <svg id="trash-undo" viewBox="0 0 24 24" fill="currentColor">
+      <path d="m16,15.5v2c0,.552-.447,1-1,1s-1-.448-1-1v-2c0-1.103-.897-2-2-2h-1.898l1.293,1.293c.391.391.391,1.024,0,1.414-.195.195-.451.293-.707.293s-.512-.098-.707-.293l-1.613-1.614c-1.154-1.154-1.154-3.032,0-4.187l1.613-1.614c.391-.391,1.023-.391,1.414,0,.391.39.391,1.023,0,1.414l-1.293,1.293h1.898c2.206,0,4,1.794,4,4Zm7-10.5c0,.552-.447,1-1,1h-.886l-1.276,13.472c-.244,2.582-2.384,4.528-4.977,4.528h-5.728c-2.59,0-4.729-1.944-4.977-4.521l-1.296-13.479h-.861c-.553,0-1-.448-1-1s.447-1,1-1h4.101c.465-2.279,2.485-4,4.899-4h2c2.414,0,4.435,1.721,4.899,4h4.101c.553,0,1,.448,1,1Zm-14.828-1h7.656c-.413-1.164-1.524-2-2.828-2h-2c-1.304,0-2.415.836-2.828,2Zm10.934,2H4.87l1.277,13.287c.149,1.546,1.433,2.713,2.986,2.713h5.728c1.556,0,2.839-1.168,2.986-2.717l1.259-13.283Z" />
+    </svg>
+
+    <svg id="trash-xmark" viewBox="0 0 24 24" fill="currentColor">
+      <path d="m15.707,11.707l-2.293,2.293,2.293,2.293c.391.391.391,1.023,0,1.414-.195.195-.451.293-.707.293s-.512-.098-.707-.293l-2.293-2.293-2.293,2.293c-.195.195-.451.293-.707.293s-.512-.098-.707-.293c-.391-.391-.391-1.023,0-1.414l2.293-2.293-2.293-2.293c-.391-.391-.391-1.023,0-1.414s1.023-.391,1.414,0l2.293,2.293,2.293-2.293c.391-.391,1.023-.391,1.414,0s.391,1.023,0,1.414Zm7.293-6.707c0,.553-.448,1-1,1h-.885l-1.276,13.472c-.245,2.581-2.385,4.528-4.978,4.528h-5.727c-2.589,0-4.729-1.943-4.977-4.521l-1.296-13.479h-.86c-.552,0-1-.447-1-1s.448-1,1-1h4.101c.465-2.279,2.485-4,4.899-4h2c2.414,0,4.435,1.721,4.899,4h4.101c.552,0,1,.447,1,1Zm-14.828-1h7.656c-.413-1.164-1.524-2-2.828-2h-2c-1.304,0-2.415.836-2.828,2Zm10.934,2H4.87l1.278,13.287c.148,1.547,1.432,2.713,2.986,2.713h5.727c1.556,0,2.84-1.168,2.987-2.718l1.258-13.282Z" />
+    </svg>
+
+    <svg id="sulok-logo" viewBox="0 0 64 64">
+      <path d="M32,61.5c-10.83-.2-19-1.29-23.49-6-3-2.88-4.74-7.44-5.51-14.37-.27-2.58-.43-5.49-.5-9.15C2.69,21.18,3.78,13,8.5,8.51,13,3.79,21.17,2.7,32,2.5c10.81.2,19,1.29,23.48,6C60.22,13,61.31,21.18,61.5,32c-.07,3.65-.23,6.56-.5,9.14-.77,6.93-2.52,11.49-5.5,14.35C51,60.21,42.83,61.3,32,61.5Z" fill="#f7f5f0" />
+      <path d="M32,3c10.7.2,18.73,1.26,23.16,5.87C59.75,13.28,60.82,21.31,61,32c-.07,3.65-.23,6.55-.5,9.1-.76,6.81-2.45,11.28-5.37,14.08C50.72,59.74,42.69,60.81,32,61c-10.72-.19-18.75-1.26-23.18-5.87C6,52.36,4.26,47.89,3.5,41.08,3.23,38.53,3.07,35.63,3,32c.18-10.7,1.25-18.73,5.87-23.17C13.26,4.26,21.29,3.2,32,3m0-1C21.38,2.19,12.84,3.26,8.15,8.15,3.25,12.85,2.18,21.38,2,32c.06,3.29.2,6.37.51,9.2.7,6.33,2.25,11.41,5.64,14.66,4.69,4.89,13.23,6,23.85,6.15,10.62-.19,19.15-1.26,23.85-6.15,3.39-3.25,4.94-8.33,5.64-14.66.31-2.83.45-5.91.51-9.2-.18-10.61-1.25-19.14-6.15-23.84C51.15,3.26,42.62,2.19,32,2Z" fill="#1e1b18" />
+      <path d="M16,27.22a3.86,3.86,0,0,1-1-.12,2.66,2.66,0,0,1-.69-.28,4.19,4.19,0,0,1-.43-.27.51.51,0,0,0-.27-.12.47.47,0,0,0-.26.11l-.3.26a3.59,3.59,0,0,1-.33.25.54.54,0,0,1-.33.11.51.51,0,0,1-.39-.13.57.57,0,0,1-.1-.44L12.12,24a.84.84,0,0,1,.16-.49.48.48,0,0,1,.38-.16.45.45,0,0,1,.35.15,1.53,1.53,0,0,1,.27.44l.2.85a1.85,1.85,0,0,0,.71,1.11,2.06,2.06,0,0,0,1.22.38,1.67,1.67,0,0,0,.69-.13,1.22,1.22,0,0,0,.49-.4,1.35,1.35,0,0,0,.24-.6A1.55,1.55,0,0,0,16.6,24a3.92,3.92,0,0,0-1.31-1.12,4.49,4.49,0,0,1-1.6-1.44,2.68,2.68,0,0,1-.36-1.77,3.41,3.41,0,0,1,.61-1.59A3.58,3.58,0,0,1,15.38,17a5.15,5.15,0,0,1,2.23-.44,4.59,4.59,0,0,1,1.93.36,2.82,2.82,0,0,1,1.16.93,1.94,1.94,0,0,1,.36,1.2,1.26,1.26,0,0,1-.28.81.94.94,0,0,1-1.31.12,1.49,1.49,0,0,1-.4-.68l-.16-.62a1.87,1.87,0,0,0-.56-1,1.34,1.34,0,0,0-.89-.31,1.62,1.62,0,0,0-.81.19,1.55,1.55,0,0,0-.55.5,2,2,0,0,0-.26.72,1.63,1.63,0,0,0,.25,1.16,3.93,3.93,0,0,0,1.25,1.13,7.61,7.61,0,0,1,1.45,1.17,2.73,2.73,0,0,1,.67,1.11,3,3,0,0,1,.09,1.21A2.55,2.55,0,0,1,19,25.94a3.12,3.12,0,0,1-1.26.94A4.4,4.4,0,0,1,16,27.22Z" fill="#1e1b18" />
+      <path d="M29.13,25.2a.25.25,0,0,1,.12.23,1,1,0,0,1-.12.44,2.48,2.48,0,0,1-1,1,3.12,3.12,0,0,1-1.55.38,1.45,1.45,0,0,1-.84-.22.77.77,0,0,1-.3-.65,1.73,1.73,0,0,1,.11-.56c.08-.21.17-.44.28-.68s.23-.51.34-.79a5,5,0,0,0,.28-.88l.17.15a7.56,7.56,0,0,1-.9,1.73,5.77,5.77,0,0,1-1.07,1.12,3.83,3.83,0,0,1-1.12.6,3.35,3.35,0,0,1-1,.18,1.42,1.42,0,0,1-1-.3,1.09,1.09,0,0,1-.34-.82,3.47,3.47,0,0,1,.23-1.22l.81-2.31a1.54,1.54,0,0,0,.14-.74c0-.13-.11-.2-.22-.2a.36.36,0,0,0-.19.05,1,1,0,0,0-.25.17.65.65,0,0,1-.26.16.38.38,0,0,1-.21,0,.26.26,0,0,1-.12-.24.88.88,0,0,1,.12-.44,2.52,2.52,0,0,1,1-1A3,3,0,0,1,23.71,20a1.51,1.51,0,0,1,1,.26A1,1,0,0,1,25,21a3.07,3.07,0,0,1-.21,1.11L24,24.4a1.67,1.67,0,0,0-.15.84c0,.17.16.26.38.26a1.05,1.05,0,0,0,.5-.15,3,3,0,0,0,.55-.45,4.12,4.12,0,0,0,.53-.7,5.24,5.24,0,0,0,.45-.95q.15-.37.24-.66c.06-.19.11-.35.14-.48a1.55,1.55,0,0,0,.05-.34,1.07,1.07,0,0,0-.08-.41A1.07,1.07,0,0,1,26.5,21a.8.8,0,0,1,.54-.71A3.31,3.31,0,0,1,28.52,20c.47,0,.75.16.85.46a2.07,2.07,0,0,1-.16,1.28l-1.07,2.91a1.54,1.54,0,0,0-.14.74c0,.14.11.21.22.21a.35.35,0,0,0,.19-.06,1.23,1.23,0,0,0,.25-.17.7.7,0,0,1,.26-.16A.26.26,0,0,1,29.13,25.2Z" fill="#1e1b18" />
+      <path d="M35.08,18.54l-1.86,6a1.69,1.69,0,0,0-.14.77.24.24,0,0,0,.24.21.54.54,0,0,0,.27-.07,1.27,1.27,0,0,0,.28-.22.9.9,0,0,1,.25-.15.28.28,0,0,1,.2,0,.25.25,0,0,1,.13.23.93.93,0,0,1-.11.43,2.33,2.33,0,0,1-.59.75,3,3,0,0,1-.91.5,3.15,3.15,0,0,1-1.13.19,1.49,1.49,0,0,1-1-.26.93.93,0,0,1-.32-.73,3.56,3.56,0,0,1,.19-1.15l1.87-6.05a1.46,1.46,0,0,0,.12-.74c0-.13-.1-.2-.2-.2a.49.49,0,0,0-.2.05,1,1,0,0,0-.25.18.79.79,0,0,1-.26.16.34.34,0,0,1-.2,0,.26.26,0,0,1-.13-.24.86.86,0,0,1,.13-.43,2.25,2.25,0,0,1,.58-.72,3.07,3.07,0,0,1,.85-.48A3.27,3.27,0,0,1,34,16.44a1.4,1.4,0,0,1,.95.26.91.91,0,0,1,.33.72A3.32,3.32,0,0,1,35.08,18.54Z" fill="#1e1b18" />
+      <path d="M40,20a4,4,0,0,1,2-.45,2.56,2.56,0,0,1,1.13,1.28,3.39,3.39,0,0,1,.13,1.95,4.89,4.89,0,0,1-.55,1.5,4.27,4.27,0,0,1-1,1.13,4.22,4.22,0,0,1-1.34.72,5.27,5.27,0,0,1-1.61.24,4,4,0,0,1-2-.46A2.5,2.5,0,0,1,35.7,25.5a3.36,3.36,0,0,1-.13-1.94,4.7,4.7,0,0,1,.55-1.5,3.82,3.82,0,0,1,1-1.14,4,4,0,0,1,1.33-.72A4.63,4.63,0,0,1,40,20Zm-1.33,6.31a.76.76,0,0,0,.42,0A1,1,0,0,0,39.5,26a2.4,2.4,0,0,0,.37-.51,4,4,0,0,0,.33-.74,10.22,10.22,0,0,0,.3-1,9.42,9.42,0,0,0,.23-1.49,2.19,2.19,0,0,0-.14-.94.63.63,0,0,0-.48-.38.75.75,0,0,0-.42,0,1.15,1.15,0,0,0-.39.27,2.08,2.08,0,0,0-.36.5,3.81,3.81,0,0,0-.33.75c-.1.29-.2.62-.29,1a7.53,7.53,0,0,0-.23,1.5,2,2,0,0,0,.13.93A.6.6,0,0,0,38.69,26.28Z" fill="#1e1b18" />
+      <path d="M45.8,18.31c0-.13-.1-.2-.21-.2a.53.53,0,0,0-.2.05,1,1,0,0,0-.24.18.81.81,0,0,1-.27.16.35.35,0,0,1-.2,0,.28.28,0,0,1-.13-.24,1,1,0,0,1,.13-.43,2.39,2.39,0,0,1,.58-.72,2.88,2.88,0,0,1,.84-.48,3.21,3.21,0,0,1,1-.17,1.73,1.73,0,0,1,.75.14.86.86,0,0,1,.38.42,1.5,1.5,0,0,1,.08.66,3.92,3.92,0,0,1-.16.88l-1.1,4-.38.22a4.15,4.15,0,0,1,.53-1.19,3.47,3.47,0,0,1,.86-.89,3.57,3.57,0,0,1,1.1-.56A4.47,4.47,0,0,1,50.5,20a1.91,1.91,0,0,1,1.33.44,1.29,1.29,0,0,1,.34,1.19,2,2,0,0,1-.77,1.3,5.78,5.78,0,0,1-1.95,1,19.14,19.14,0,0,1-3.26.7l0-.7a10.7,10.7,0,0,0,2-.45,3.14,3.14,0,0,0,1.12-.63,1.52,1.52,0,0,0,.46-.82.77.77,0,0,0-.09-.58.58.58,0,0,0-.49-.21,1.26,1.26,0,0,0-.69.17,2.55,2.55,0,0,0-.69.53,4.09,4.09,0,0,0-.59.83,6.15,6.15,0,0,0-.43,1.1c-.09.38-.17.67-.22.88a3.63,3.63,0,0,0-.09.47,1.48,1.48,0,0,0,0,.27,1.24,1.24,0,0,0,.07.4,1.32,1.32,0,0,1,.07.42.67.67,0,0,1-.24.51,1.58,1.58,0,0,1-.7.33,4.26,4.26,0,0,1-1.09.12.94.94,0,0,1-.65-.19.72.72,0,0,1-.21-.56,3.17,3.17,0,0,1,.15-.88l1.87-6.55A1.74,1.74,0,0,0,45.8,18.31Zm3.76,5.3.37,1.2a1.23,1.23,0,0,0,.28.53.54.54,0,0,0,.37.16.51.51,0,0,0,.26-.07,1.84,1.84,0,0,0,.22-.17.59.59,0,0,1,.24-.16.31.31,0,0,1,.19,0,.22.22,0,0,1,.17.14.48.48,0,0,1,0,.34,1.88,1.88,0,0,1-.43.87,2.25,2.25,0,0,1-.8.59,2.5,2.5,0,0,1-1,.21,1.3,1.3,0,0,1-.94-.34,2.29,2.29,0,0,1-.5-1l-.47-1.8Z" fill="#1e1b18" />
+      <path d="M61.49,41.19c-.7,6.33-2.25,11.41-5.64,14.66-4.7,4.89-13.23,6-23.85,6.15-10.62-.19-19.16-1.26-23.85-6.15C4.76,52.6,3.21,47.52,2.51,41.19a15.07,15.07,0,0,1,1.43-1.66,15.25,15.25,0,0,1,10.78-4.46H49.28A15.23,15.23,0,0,1,61.49,41.19Z" fill="#1e1b18" />
+      <path d="M21.63,42.58l4.18,0a1.63,1.63,0,0,1,1.46,1.7h0A1.53,1.53,0,0,1,26,46L21.77,46a1.63,1.63,0,0,1-1.46-1.7A1.53,1.53,0,0,1,21.63,42.58Z" fill="#f7f5f0" />
+      <path d="M36.74,42.14l5.16-.21a1.72,1.72,0,0,1,1.79,1.65h0A1.72,1.72,0,0,1,42,45.37l-5.16.21a1.72,1.72,0,0,1-.14-3.44Z" fill="#f7f5f0" />
+    </svg>
+  </defs>
+
+  <rect width="340" height="288" rx="16" class="wrapper-bg" />
+
+  <g transform="translate(16, 16)">
+    <!-- Top Folders -->
+    <g class="opacity-15">
+      <use href="#folder-icon" x="12" y="8" width="20" height="20" />
+      <text x="44" y="21" class="text-sm font-medium fill-muted-foreground">Archived Projects</text>
+      <text x="44" y="33" class="font-mono text-xs fill-muted-foreground" style="font-size: 10px; letter-spacing: -0.02em;">12 days left</text>
+    </g>
+    
+    <g class="opacity-30" transform="translate(0, 44)">
+      <use href="#folder-icon" x="12" y="8" width="20" height="20" />
+      <text x="44" y="21" class="text-sm font-medium fill-muted-foreground">Design System</text>
+      <text x="44" y="33" class="font-mono text-xs fill-muted-foreground" style="font-size: 10px; letter-spacing: -0.02em;">3 days left</text>
+    </g>
+
+    <g class="opacity-60" transform="translate(0, 88)">
+      <use href="#folder-icon" x="12" y="8" width="20" height="20" />
+      <text x="44" y="21" class="text-sm font-medium fill-muted-foreground">Bookmarks</text>
+      <text x="44" y="33" class="font-mono text-xs fill-muted-foreground" style="font-size: 10px; letter-spacing: -0.02em;">28 days left</text>
+    </g>
+
+    <!-- Active Deleted Item Wrapper (Handles shrinking out) -->
+    <g class="itemScaleAnim">
+      <!-- Active Deleted Item Background (Handles hover highlight) -->
+      <rect width="308" height="66" rx="12" class="itemBgAnim" stroke-width="1" />
+      
+      <g transform="translate(12, 14)">
+        <rect width="24" height="24" rx="6" class="fill-white border-stroke" />
+        <use href="#sulok-logo" x="2" y="2" width="20" height="20" />
+      </g>
+      
+      <text x="48" y="28" class="text-sm font-medium fill-foreground">Sulok — Your corner of the web</text>
+      <text x="48" y="42" class="font-mono fill-muted-foreground" style="font-size: 11px; letter-spacing: -0.02em;">https://sulok-app.vercel.app</text>
+      <text x="48" y="56" class="font-mono fill-muted-foreground" style="font-size: 11px; letter-spacing: -0.02em;">29 days left</text>
+
+      <!-- Action Buttons -->
+      <g class="actionGroupAnim" transform="translate(222, 15)">
+        <rect width="74" height="36" rx="12" class="fill-background border-stroke" />
+        
+        <g class="restoreBtnAnim" transform="translate(2, 2)">
+          <rect width="32" height="32" rx="12" />
+          <use href="#trash-undo" x="8" y="8" width="16" height="16" class="restoreBtnIconAnim" />
+        </g>
+        
+        <line x1="37" y1="10" x2="37" y2="26" class="stroke-foreground" opacity="0.15" stroke-width="1" />
+        
+        <g transform="translate(38, 2)">
+          <use href="#trash-xmark" x="8" y="8" width="16" height="16" class="text-muted-foreground opacity-60" />
+        </g>
+      </g>
+    </g>
+
+    <!-- Bottom Faded Links (Slides up when restored) -->
+    <g class="bottomLinksAnim">
+      <g class="opacity-60">
+        <g transform="translate(12, 10)">
+          <rect width="20" height="20" rx="6" class="fill-muted border-stroke" />
+          <use href="#globe-icon" x="4" y="4" width="12" height="12" class="text-muted-foreground" opacity="0.5" />
+        </g>
+        <text x="44" y="21" class="text-sm font-medium fill-foreground">Developer Docs</text>
+        <text x="44" y="34" class="font-mono text-xs fill-muted-foreground" style="font-size: 10px; letter-spacing: -0.02em;">https://docs.example.com</text>
+        <text x="44" y="46" class="font-mono text-xs fill-muted-foreground" style="font-size: 10px; letter-spacing: -0.02em;">30 days left</text>
+      </g>
+      
+      <g class="opacity-30" transform="translate(0, 56)">
+        <g transform="translate(12, 10)">
+          <rect width="20" height="20" rx="6" class="fill-muted border-stroke" />
+          <use href="#globe-icon" x="4" y="4" width="12" height="12" class="text-muted-foreground" opacity="0.5" />
+        </g>
+        <text x="44" y="21" class="text-sm font-medium fill-foreground">Analytics Dashboard</text>
+        <text x="44" y="34" class="font-mono text-xs fill-muted-foreground" style="font-size: 10px; letter-spacing: -0.02em;">https://stats.example.com</text>
+        <text x="44" y="46" class="font-mono text-xs fill-muted-foreground" style="font-size: 10px; letter-spacing: -0.02em;">29 days left</text>
+      </g>
+
+      <g class="opacity-15" transform="translate(0, 112)">
+        <g transform="translate(12, 10)">
+          <rect width="20" height="20" rx="6" class="fill-muted border-stroke" />
+          <use href="#globe-icon" x="4" y="4" width="12" height="12" class="text-muted-foreground" opacity="0.5" />
+        </g>
+        <text x="44" y="21" class="text-sm font-medium fill-foreground">Server Logs</text>
+        <text x="44" y="34" class="font-mono text-xs fill-muted-foreground" style="font-size: 10px; letter-spacing: -0.02em;">https://logs.example.com</text>
+        <text x="44" y="46" class="font-mono text-xs fill-muted-foreground" style="font-size: 10px; letter-spacing: -0.02em;">1 day left</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Cursor -->
+  <g class="cursorAnim">
+    <circle cx="3.5" cy="3.5" r="8" class="pingAnim" fill="rgba(74, 60, 49, 0.4)" />
+    <svg width="20" height="20" viewBox="0 0 24 24">
+      <path fill="var(--foreground)" stroke="var(--foreground)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4.037 4.688a.495.495 0 0 1 .651-.651l16 6.5a.5.5 0 0 1-.063.947l-6.124 1.58a2 2 0 0 0-1.438 1.435l-1.579 6.126a.5.5 0 0 1-.947.063z" />
+    </svg>
+  </g>
+
+  <!-- Success Toast -->
+  <g class="toastAnim">
+    <rect width="112" height="28" rx="14" fill="#ffffff" filter="url(#shadow-toast)" />
+    <use href="#check-icon" x="10" y="7" width="14" height="14" class="text-green" />
+    <text x="28" y="18" class="text-xs font-semibold text-green" style="font-size: 11px;">Link restored</text>
+  </g>
+</svg>

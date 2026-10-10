@@ -1,0 +1,282 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 368" width="340" height="368">
+  <defs>
+    <style>
+      /* <![CDATA[ */
+      @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&display=swap');
+      
+      :root {
+        /* Sepia Theme */
+        --background: #f4ecd8;
+        --foreground: #4a3c31;
+        --card: #f9f3e5;
+        --card-foreground: #4a3c31;
+        --popover: #f9f3e5;
+        --popover-foreground: #4a3c31;
+        --muted: #e8dfca;
+        --muted-foreground: #7c6f64;
+        --border: #dbcdb0;
+        --primary: #4a3c31;
+        --primary-foreground: #ffffff;
+        --font-sans: "Manrope", sans-serif;
+        --font-heading: "Fraunces", serif;
+      }
+      
+      text { font-family: var(--font-sans); }
+      .font-heading { font-family: var(--font-heading); }
+
+      .wrapper-bg { fill: var(--muted); fill-opacity: 0.2; stroke: var(--border); stroke-opacity: 0.6; stroke-width: 1; }
+      
+      .text-lg { font-size: 18px; }
+      .text-sm { font-size: 14px; }
+      .text-xs { font-size: 12px; }
+      .font-medium { font-weight: 500; }
+      .font-bold { font-weight: 700; }
+      
+      .fill-foreground { fill: var(--foreground); color: var(--foreground); }
+      .fill-muted-foreground { fill: var(--muted-foreground); color: var(--muted-foreground); }
+      .fill-background { fill: var(--background); color: var(--background); }
+      .fill-card { fill: var(--card); }
+      .fill-muted { fill: var(--muted); }
+      .fill-transparent { fill: transparent; }
+      
+      .stroke-foreground { stroke: var(--foreground); fill: none; }
+      .stroke-muted-foreground { stroke: var(--muted-foreground); fill: none; }
+      .stroke-border { stroke: var(--border); fill: none; }
+      .stroke-transparent { stroke: transparent; }
+      .border-stroke { stroke: var(--border); stroke-width: 1; }
+
+      .opacity-20 { opacity: 0.2; }
+      .opacity-40 { opacity: 0.4; }
+
+      .cursor-anim { animation: cursorTransform 8s infinite cubic-bezier(0.2, 0.8, 0.2, 1); }
+      .ping-circle-1 { animation: pingPulse1 8s infinite cubic-bezier(0, 0, 0.2, 1); transform-origin: 3.5px 3.5px; }
+
+      .themeHoverInnerAnim { animation: innerHover 8s infinite cubic-bezier(0.2, 0.8, 0.2, 1); transform-origin: 14px 14px; }
+      .accentHoverInnerAnim { animation: innerHoverAccent 8s infinite cubic-bezier(0.2, 0.8, 0.2, 1); transform-origin: 14px 14px; }
+
+      .squircleItemBgAnim { animation: squircleItemBgAnim 8s infinite cubic-bezier(0.2, 0.8, 0.2, 1); }
+      .squircleItemTextAnim { animation: squircleItemTextAnim 8s infinite cubic-bezier(0.2, 0.8, 0.2, 1); }
+      .squircleItemIconAnim { animation: squircleItemIconAnim 8s infinite cubic-bezier(0.2, 0.8, 0.2, 1); }
+
+      .standardItemBgAnim { animation: standardItemBgAnim 8s infinite cubic-bezier(0.2, 0.8, 0.2, 1); }
+      .standardItemTextAnim { animation: standardItemTextAnim 8s infinite cubic-bezier(0.2, 0.8, 0.2, 1); }
+      .standardItemIconAnim { animation: standardItemIconAnim 8s infinite cubic-bezier(0.2, 0.8, 0.2, 1); }
+
+      @keyframes innerHover {
+        0%, 19.9% { transform: scale(1); }
+        20%, 30% { transform: scale(1.15); }
+        30.1%, 100% { transform: scale(1); }
+      }
+      @keyframes innerHoverAccent {
+        0%, 37.4% { transform: scale(1); }
+        37.5%, 47.5% { transform: scale(1.15); }
+        47.6%, 100% { transform: scale(1); }
+      }
+
+      @keyframes squircleItemBgAnim {
+        0%, 54.9% { fill: var(--background); filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05)); }
+        55%, 76.1% { fill: transparent; filter: none; }
+        76.25%, 100% { fill: var(--background); filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05)); }
+      }
+      @keyframes squircleItemTextAnim {
+        0%, 54.9% { fill: var(--foreground); color: var(--foreground); }
+        55%, 76.1% { fill: var(--muted-foreground); color: var(--muted-foreground); }
+        76.25%, 100% { fill: var(--foreground); color: var(--foreground); }
+      }
+      @keyframes squircleItemIconAnim {
+        0%, 54.9% { stroke: var(--primary); }
+        55%, 76.1% { stroke: rgba(124, 111, 100, 0.8); }
+        76.25%, 100% { stroke: var(--primary); }
+      }
+
+      @keyframes standardItemBgAnim {
+        0%, 54.9% { fill: transparent; filter: none; }
+        55%, 76.1% { fill: var(--background); filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05)); }
+        76.25%, 100% { fill: transparent; filter: none; }
+      }
+      @keyframes standardItemTextAnim {
+        0%, 54.9% { fill: var(--muted-foreground); color: var(--muted-foreground); }
+        55%, 76.1% { fill: var(--foreground); color: var(--foreground); }
+        76.25%, 100% { fill: var(--muted-foreground); color: var(--muted-foreground); }
+      }
+      @keyframes standardItemIconAnim {
+        0%, 54.9% { stroke: rgba(124, 111, 100, 0.8); }
+        55%, 76.1% { stroke: var(--primary); }
+        76.25%, 100% { stroke: rgba(124, 111, 100, 0.8); }
+      }
+
+      @keyframes cursorTransform {
+        0%, 12.5% { transform: translate(240px, 320px); opacity: 0; }
+        20%, 30% { transform: translate(88px, 131px); opacity: 1; }
+        37.5%, 47.5% { transform: translate(160px, 201px); opacity: 1; }
+        55% { transform: translate(166px, 291px); opacity: 1; }
+        55.1%, 61.25% { transform: translate(166px, 291px) scale(0.95); opacity: 1; }
+        61.26%, 68.75% { transform: translate(166px, 291px) scale(1); opacity: 1; }
+        76.25% { transform: translate(82px, 291px); opacity: 1; }
+        76.26%, 82.5% { transform: translate(82px, 291px) scale(0.95); opacity: 1; }
+        82.51%, 92.5% { transform: translate(82px, 291px) scale(1); opacity: 1; }
+        100% { transform: translate(240px, 320px); opacity: 0; }
+      }
+
+      @keyframes pingPulse1 {
+        0%, 54.9% { transform: scale(1); opacity: 0; }
+        55% { transform: scale(1); opacity: 1; }
+        60%, 76.1% { transform: scale(2); opacity: 0; }
+        76.25% { transform: scale(1); opacity: 1; }
+        81.25%, 100% { transform: scale(2); opacity: 0; }
+      }
+      /* ]]> */
+    </style>
+
+    <linearGradient id="system-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="50%" stop-color="#f7f5f0" />
+      <stop offset="50%" stop-color="#1e1b18" />
+    </linearGradient>
+
+    <svg id="check-icon" viewBox="0 0 24 24">
+      <path d="M20 6 9 17l-5-5" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <svg id="wand-icon" viewBox="0 0 24 24">
+      <path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="m14 7 3 3" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M5 6v4" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M19 14v4" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M10 2v2" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M7 8H3" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M21 16h-4" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M11 3H9" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <svg id="squircle-icon" viewBox="0 0 24 24">
+      <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9-9 9-9-1.8-9-9 1.8-9 9-9" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <svg id="square-icon" viewBox="0 0 24 24">
+      <rect width="18" height="18" x="3" y="3" rx="2" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <svg id="settings-icon" viewBox="0 0 24 24">
+      <path d="M14 17H5" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M19 7h-9" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="17" cy="17" r="3" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="7" cy="7" r="3" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </defs>
+
+  <rect width="340" height="368" rx="16" class="wrapper-bg" />
+
+  <g transform="translate(26, 23)">
+    <rect x="0" y="0" width="288" height="322" rx="12" class="fill-background border-stroke" style="filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));" />
+    
+    <!-- Header -->
+    <use href="#wand-icon" x="16" y="16" width="20" height="20" stroke="var(--foreground)" />
+    <text x="44" y="32" class="text-lg font-bold fill-foreground">Quick Customize</text>
+
+    <rect x="228" y="17" width="44" height="18" rx="4" class="fill-muted" />
+    <text x="250" y="29" text-anchor="middle" class="font-medium fill-muted-foreground" style="font-size: 9px;">SHIFT + C</text>
+
+    <text x="16" y="54" class="font-medium fill-muted-foreground" style="font-size: 10px;">Preview changes live without leaving your corner.</text>
+    <line x1="0" y1="68" x2="288" y2="68" stroke="rgba(219, 205, 176, 0.5)" stroke-width="1" />
+
+    <!-- Workspace Theme -->
+    <text x="16" y="90" class="text-sm font-medium fill-foreground">Workspace Theme</text>
+    <g transform="translate(16, 98)">
+      <!-- Box 0: System -->
+      <g>
+        <rect x="0" y="0" width="28" height="28" rx="8" class="fill-background stroke-transparent" style="filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05));" />
+        <rect x="5" y="5" width="18" height="18" rx="6" fill="url(#system-gradient)" stroke="rgba(74, 60, 49, 0.5)" stroke-width="1" />
+        <use href="#check-icon" x="8" y="8" width="12" height="12" stroke="#888" style="filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));" />
+      </g>
+      <!-- Box 1: Cream (Hovered) -->
+      <g transform="translate(36, 0)">
+        <rect x="0" y="0" width="28" height="28" rx="8" class="fill-muted opacity-20 border-stroke" />
+        <rect x="2" y="2" width="24" height="24" rx="6" fill="#f7f5f0" stroke="rgba(219, 205, 176, 0.5)" stroke-width="1" class="themeHoverInnerAnim" />
+      </g>
+      <!-- Box 2: Sepia -->
+      <g transform="translate(72, 0)">
+        <rect x="0" y="0" width="28" height="28" rx="8" class="fill-muted opacity-20 border-stroke" />
+        <rect x="2" y="2" width="24" height="24" rx="6" fill="#F4ECD8" stroke="rgba(219, 205, 176, 0.5)" stroke-width="1" />
+      </g>
+      <!-- Box 3: Sand -->
+      <g transform="translate(108, 0)">
+        <rect x="0" y="0" width="28" height="28" rx="8" class="fill-muted opacity-20 border-stroke" />
+        <rect x="2" y="2" width="24" height="24" rx="6" fill="#EAE6DF" stroke="rgba(219, 205, 176, 0.5)" stroke-width="1" />
+      </g>
+      <!-- Box 4: Charcoal -->
+      <g transform="translate(144, 0)">
+        <rect x="0" y="0" width="28" height="28" rx="8" class="fill-muted opacity-20 border-stroke" />
+        <rect x="2" y="2" width="24" height="24" rx="6" fill="#1e1b18" stroke="rgba(219, 205, 176, 0.5)" stroke-width="1" />
+      </g>
+      <!-- Box 5: Midnight -->
+      <g transform="translate(180, 0)">
+        <rect x="0" y="0" width="28" height="28" rx="8" class="fill-muted opacity-20 border-stroke" />
+        <rect x="2" y="2" width="24" height="24" rx="6" fill="#0B1120" stroke="rgba(219, 205, 176, 0.5)" stroke-width="1" />
+      </g>
+    </g>
+
+    <!-- Accent Color -->
+    <text x="16" y="160" class="text-sm font-medium fill-foreground">Accent Color</text>
+    <g transform="translate(16, 168)">
+      <!-- Box 0: Default -->
+      <g>
+        <rect x="0" y="0" width="28" height="28" rx="8" class="fill-background stroke-transparent" style="filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05));" />
+        <rect x="5" y="5" width="18" height="18" rx="6" fill="#1e1b18" stroke="rgba(30, 27, 24, 0.5)" stroke-width="1" />
+        <use href="#check-icon" x="8" y="8" width="12" height="12" stroke="#ffffff" style="filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));" />
+      </g>
+      <!-- Box 1: Cyan -->
+      <g transform="translate(36, 0)">
+        <rect x="0" y="0" width="28" height="28" rx="8" class="fill-muted opacity-20 border-stroke" />
+        <rect x="2" y="2" width="24" height="24" rx="6" fill="#0ea5e9" stroke="rgba(219, 205, 176, 0.5)" stroke-width="1" />
+      </g>
+      <!-- Box 2: Orange -->
+      <g transform="translate(72, 0)">
+        <rect x="0" y="0" width="28" height="28" rx="8" class="fill-muted opacity-20 border-stroke" />
+        <rect x="2" y="2" width="24" height="24" rx="6" fill="#f97316" stroke="rgba(219, 205, 176, 0.5)" stroke-width="1" />
+      </g>
+      <!-- Box 3: Green (Hovered) -->
+      <g transform="translate(108, 0)">
+        <rect x="0" y="0" width="28" height="28" rx="8" class="fill-muted opacity-20 border-stroke" />
+        <rect x="2" y="2" width="24" height="24" rx="6" fill="#22c55e" stroke="rgba(219, 205, 176, 0.5)" stroke-width="1" class="accentHoverInnerAnim" />
+      </g>
+      <!-- Box 4: Purple -->
+      <g transform="translate(144, 0)">
+        <rect x="0" y="0" width="28" height="28" rx="8" class="fill-muted opacity-20 border-stroke" />
+        <rect x="2" y="2" width="24" height="24" rx="6" fill="#a855f7" stroke="rgba(219, 205, 176, 0.5)" stroke-width="1" />
+      </g>
+      <!-- Box 5: Rose -->
+      <g transform="translate(180, 0)">
+        <rect x="0" y="0" width="28" height="28" rx="8" class="fill-muted opacity-20 border-stroke" />
+        <rect x="2" y="2" width="24" height="24" rx="6" fill="#f43f5e" stroke="rgba(219, 205, 176, 0.5)" stroke-width="1" />
+      </g>
+    </g>
+
+    <!-- Corner Radius -->
+    <text x="16" y="230" class="text-sm font-medium fill-foreground">Corner Radius</text>
+    <rect x="16" y="238" width="256" height="68" rx="8" class="fill-muted opacity-40" />
+    <g transform="translate(16, 238)">
+      <!-- Item 0 (Squircle) -->
+      <g transform="translate(4, 4)">
+        <rect x="0" y="0" width="80" height="60" rx="6" class="squircleItemBgAnim" />
+        <use href="#squircle-icon" x="30" y="10" width="20" height="20" class="squircleItemIconAnim" />
+        <text x="40" y="44" text-anchor="middle" class="font-medium squircleItemTextAnim" style="font-size: 11px;">Squircle</text>
+      </g>
+      <!-- Item 1 (Standard) -->
+      <g transform="translate(88, 4)">
+        <rect x="0" y="0" width="80" height="60" rx="6" class="standardItemBgAnim" />
+        <use href="#square-icon" x="30" y="10" width="20" height="20" class="standardItemIconAnim" />
+        <text x="40" y="44" text-anchor="middle" class="font-medium standardItemTextAnim" style="font-size: 11px;">Standard</text>
+      </g>
+      <!-- Item 2 (Custom) -->
+      <g transform="translate(172, 4)">
+        <rect x="0" y="0" width="80" height="60" rx="6" class="fill-transparent" />
+        <use href="#settings-icon" x="30" y="10" width="20" height="20" stroke="rgba(124, 111, 100, 0.8)" />
+        <text x="40" y="44" text-anchor="middle" class="font-medium fill-muted-foreground" style="font-size: 11px;">Custom</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Fake Cursor -->
+  <g class="cursor-anim">
+    <circle cx="3.5" cy="3.5" r="8" class="ping-circle-1" fill="rgba(74, 60, 49, 0.4)" />
+    <svg width="20" height="20" viewBox="0 0 24 24">
+      <path fill="var(--foreground)" stroke="var(--foreground)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4.037 4.688a.495.495 0 0 1 .651-.651l16 6.5a.5.5 0 0 1-.063.947l-6.124 1.58a2 2 0 0 0-1.438 1.435l-1.579 6.126a.5.5 0 0 1-.947.063z" />
+    </svg>
+  </g>
+</svg>

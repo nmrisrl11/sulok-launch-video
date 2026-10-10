@@ -1,0 +1,281 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 280" width="340" height="280">
+  <defs>
+    <style>
+      /* <![CDATA[ */
+      @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&display=swap');
+
+      :root {
+        /* Sepia Theme */
+        --background: #f4ecd8;
+        --foreground: #4a3c31;
+        --card: #f9f3e5;
+        --card-foreground: #4a3c31;
+        --popover: #f9f3e5;
+        --popover-foreground: #4a3c31;
+        --muted: #e8dfca;
+        --muted-foreground: #7c6f64;
+        --border: #dbcdb0;
+        --primary: #4a3c31;
+        --primary-foreground: #ffffff;
+        --font-sans: "Manrope", sans-serif;
+        --font-heading: "Fraunces", serif;
+      }
+      
+      text { font-family: var(--font-sans); }
+      
+      .wrapper-bg { fill: var(--muted); fill-opacity: 0.2; stroke: var(--border); stroke-opacity: 0.6; stroke-width: 1; }
+      
+      .font-heading { font-family: var(--font-heading); font-weight: 700; }
+      .text-base { font-size: 16px; }
+      .text-sm { font-size: 14px; }
+      .text-xs { font-size: 11px; }
+      .font-mono { font-family: monospace; font-size: 12px; }
+      .font-medium { font-weight: 500; }
+      .font-semibold { font-weight: 600; }
+      .font-bold { font-weight: 700; }
+      
+      .fill-foreground { fill: var(--foreground); color: var(--foreground); }
+      .fill-muted-foreground { fill: var(--muted-foreground); color: var(--muted-foreground); }
+      .fill-background { fill: var(--background); color: var(--background); }
+      .fill-card { fill: var(--card); color: var(--card); }
+      .fill-muted { fill: var(--muted); color: var(--muted); }
+      .fill-white { fill: #ffffff; }
+      
+      .stroke-foreground { stroke: var(--foreground); fill: none; }
+      .stroke-muted-foreground { stroke: var(--muted-foreground); fill: none; }
+      .stroke-border { stroke: var(--border); fill: none; }
+      .border-stroke { stroke: var(--border); stroke-width: 1; }
+      
+      .opacity-20 { opacity: 0.2; }
+      .opacity-40 { opacity: 0.4; }
+      .opacity-60 { opacity: 0.6; }
+
+      .sync-btn-anim { animation: syncBtnAnim 8s infinite cubic-bezier(0.2, 0.8, 0.2, 1); }
+      .import-btn-anim { animation: importBtnAnim 8s infinite cubic-bezier(0.2, 0.8, 0.2, 1); }
+      .cursor-anim { animation: cursorTransform 8s infinite cubic-bezier(0.2, 0.8, 0.2, 1); }
+      .ping-circle-1 { animation: pingPulse1 8s infinite cubic-bezier(0, 0, 0.2, 1); transform-origin: 3.5px 3.5px; }
+      .ping-circle-2 { animation: pingPulse2 8s infinite cubic-bezier(0, 0, 0.2, 1); transform-origin: 3.5px 3.5px; }
+      .dialogBackdrop { animation: dialogBackdrop 8s infinite cubic-bezier(0.2, 0.8, 0.2, 1); }
+      .dialogAnim { animation: dialogAnim 8s infinite cubic-bezier(0.2, 0.8, 0.2, 1); transform-origin: 170px 140px; }
+      .toastAnim { animation: toastAnim 8s infinite cubic-bezier(0.2, 0.8, 0.2, 1); transform-origin: 170px 250px; }
+
+      @keyframes syncBtnAnim {
+        0%, 22.4% { fill: var(--background); stroke: rgba(219, 205, 176, 0.5); }
+        22.5%, 27.5% { fill: rgba(232, 223, 202, 0.5); stroke: var(--border); }
+        27.6%, 100% { fill: var(--background); stroke: rgba(219, 205, 176, 0.5); }
+      }
+
+      @keyframes importBtnAnim {
+        0%, 37.4% { fill: var(--primary); }
+        37.5%, 50% { fill: rgba(74, 60, 49, 0.8); }
+        50.1%, 100% { fill: var(--primary); }
+      }
+
+      @keyframes cursorTransform {
+        0%, 12.5% { transform: translate(299px, 240px) scale(1); }
+        22.5%, 27.5% { transform: translate(170px, 78px) scale(0.95); }
+        37.5%, 50% { transform: translate(248px, 230px) scale(0.95); }
+        55%, 100% { transform: translate(299px, 240px) scale(1); }
+      }
+
+      @keyframes pingPulse1 {
+        0%, 22.4% { transform: scale(1); opacity: 0; }
+        22.5% { transform: scale(1); opacity: 0.4; }
+        30%, 100% { transform: scale(2); opacity: 0; }
+      }
+
+      @keyframes pingPulse2 {
+        0%, 37.4% { transform: scale(1); opacity: 0; }
+        37.5% { transform: scale(1); opacity: 0.4; }
+        45%, 100% { transform: scale(2); opacity: 0; }
+      }
+
+      @keyframes dialogBackdrop {
+        0%, 27% { opacity: 0; pointer-events: none; }
+        27.5%, 50% { opacity: 1; pointer-events: auto; }
+        50.1%, 100% { opacity: 0; pointer-events: none; }
+      }
+
+      @keyframes dialogAnim {
+        0%, 27% { opacity: 0; transform: scale(0.95); pointer-events: none; }
+        27.5%, 50% { opacity: 1; transform: scale(1); pointer-events: auto; }
+        50.1%, 100% { opacity: 0; transform: scale(0.95); pointer-events: none; }
+      }
+
+      @keyframes toastAnim {
+        0%, 50% { opacity: 0; transform: translateY(20px) scale(0.95); }
+        51%, 81% { opacity: 1; transform: translateY(0) scale(1); }
+        90%, 100% { opacity: 0; transform: translateY(20px) scale(0.95); }
+      }
+      /* ]]> */
+    </style>
+
+
+    <clipPath id="dialogClip">
+      <rect x="42" y="16" width="256" height="248" rx="12" />
+    </clipPath>
+
+    <clipPath id="contentClip">
+      <rect x="42" y="62" width="256" height="150" />
+    </clipPath>
+
+    <svg id="check-icon" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" stroke="inherit" stroke-width="2" fill="none" />
+      <path d="m16 9-5.5 5.5L8 12" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+
+    <svg id="cloud-upload-icon" viewBox="0 0 24 24">
+      <path d="M12 13v8" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="m8 17 4-4 4 4" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    
+    <svg id="upload-icon" viewBox="0 0 24 24">
+      <path d="M12 3v12" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="m17 8-5-5-5 5" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    
+    <svg id="settings-icon" viewBox="0 0 24 24">
+      <path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="12" cy="12" r="3" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+
+    <svg id="folder-icon" viewBox="0 0 64 64">
+      <path d="m59.61 10.69h-29.43c-1.2 0-2.35-.49-3.18-1.36l-3.76-3.94c-.83-.87-1.98-1.36-3.18-1.36h-15.67c-2.43 0-4.39 1.96-4.39 4.38v41.88c0 2.42 1.96 4.39 4.39 4.39h55.22c2.42 0 4.39-1.96 4.39-4.39v-35.21c0-2.42-1.96-4.39-4.39-4.39z" fill="var(--folder-color-back, #56b2e3)" />
+      <path d="m57.26 15.07h-50.52c-1.83 0-3.32 1.49-3.32 3.32v33.48c0 1.84 1.49 3.32 3.32 3.32h50.52c1.83 0 3.32-1.49 3.32-3.32v-33.47c0-1.84-1.48-3.33-3.32-3.33z" fill="var(--folder-color-paper, #ffffff)" />
+      <path d="m59.61 20.42h-55.22c-2.43 0-4.39 1.96-4.39 4.39v30.78c0 2.42 1.96 4.39 4.39 4.39h55.22c2.42 0 4.39-1.96 4.39-4.39v-30.78c0-2.43-1.96-4.39-4.39-4.39z" fill="var(--folder-color-front, #98cfef)" />
+    </svg>
+  </defs>
+
+  <rect width="340" height="280" rx="16" class="wrapper-bg" />
+
+  <!-- Fake App Background (Settings UI) -->
+  <g transform="translate(16, 16)">
+    <!-- Header Section -->
+    <rect width="96" height="12" rx="4" fill="rgba(74, 60, 49, 0.15)" />
+    <rect y="18" width="192" height="8" rx="4" fill="rgba(74, 60, 49, 0.05)" />
+
+    <!-- Settings Options -->
+    <g transform="translate(0, 42)">
+      <!-- Option 1: Sync Bookmarks -->
+      <g>
+        <rect width="308" height="68" rx="16" class="sync-btn-anim" stroke-width="1" style="filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));" />
+        <g transform="translate(14, 14)">
+          <rect width="40" height="40" rx="8" class="fill-card" stroke="rgba(219, 205, 176, 0.5)" style="filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));" />
+          <use href="#cloud-upload-icon" x="10" y="10" width="20" height="20" stroke="var(--foreground)" />
+        </g>
+        <text x="66" y="32" class="text-sm font-medium fill-foreground">Sync Browser Bookmarks</text>
+        <text x="66" y="48" class="text-xs fill-muted-foreground" style="font-size: 10px;">Instantly import your browser's...</text>
+      </g>
+
+      <!-- Option 2: Dummy -->
+      <g transform="translate(0, 80)" class="opacity-40">
+        <rect width="308" height="68" rx="16" class="fill-background" stroke="rgba(219, 205, 176, 0.5)" stroke-width="1" style="filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));" />
+        <g transform="translate(14, 14)">
+          <rect width="40" height="40" rx="8" class="fill-card" stroke="rgba(219, 205, 176, 0.5)" style="filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));" />
+          <use href="#upload-icon" x="10" y="10" width="20" height="20" stroke="var(--muted-foreground)" />
+        </g>
+        <rect x="66" y="24" width="96" height="8" rx="4" fill="rgba(74, 60, 49, 0.15)" />
+        <rect x="66" y="38" width="160" height="6" rx="3" fill="rgba(74, 60, 49, 0.05)" />
+      </g>
+
+      <!-- Option 3: Dummy -->
+      <g transform="translate(0, 160)" class="opacity-20">
+        <rect width="308" height="68" rx="16" class="fill-background" stroke="rgba(219, 205, 176, 0.5)" stroke-width="1" style="filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));" />
+        <g transform="translate(14, 14)">
+          <rect width="40" height="40" rx="8" class="fill-card" stroke="rgba(219, 205, 176, 0.5)" style="filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));" />
+          <use href="#settings-icon" x="10" y="10" width="20" height="20" stroke="var(--muted-foreground)" />
+        </g>
+        <rect x="66" y="24" width="128" height="8" rx="4" fill="rgba(74, 60, 49, 0.15)" />
+        <rect x="66" y="38" width="192" height="6" rx="3" fill="rgba(74, 60, 49, 0.05)" />
+      </g>
+    </g>
+  </g>
+
+  <!-- Dialog Backdrop -->
+  <rect width="340" height="280" rx="16" class="dialogBackdrop" fill="rgba(244, 236, 216, 0.6)" />
+
+  <!-- The Import Preview Dialog -->
+  <g class="dialogAnim">
+    <rect x="42" y="16" width="256" height="248" rx="12" class="border-stroke fill-card" style="filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));" />
+    
+    <!-- Dialog Header -->
+    <g transform="translate(54, 16)">
+      <text x="0" y="22" class="font-heading text-sm fill-foreground">Import Preview</text>
+      <text x="0" y="36" class="text-xs fill-muted-foreground" style="font-size: 10px;">Review items before importing.</text>
+    </g>
+    <line x1="42" y1="62" x2="298" y2="62" class="stroke-border" stroke-width="1" />
+
+    <!-- Dialog Content -->
+    <rect x="42" y="62" width="256" height="150" fill="rgba(232, 223, 202, 0.3)" />
+    
+    <!-- Stats -->
+    <g transform="translate(54, 80)">
+      <text x="0" y="0" class="text-sm font-bold fill-foreground">4</text>
+      <text x="0" y="12" class="text-xs font-medium fill-muted-foreground" style="font-size: 8px; letter-spacing: 1px; text-transform: uppercase;">To Import</text>
+      
+      <text x="76" y="0" class="text-sm font-bold fill-muted-foreground">1</text>
+      <text x="76" y="12" class="text-xs font-medium fill-muted-foreground" style="font-size: 8px; letter-spacing: 1px; text-transform: uppercase;">Duplicates</text>
+    </g>
+
+    <!-- Items List -->
+    <g clip-path="url(#contentClip)">
+      <g transform="translate(54, 102)">
+        <!-- Item 1 -->
+        <g>
+          <rect width="232" height="26" rx="8" class="fill-card border-stroke" style="filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));" />
+          <use href="#folder-icon" x="6" y="6" width="14" height="14" style="--folder-color-back: #3b82f6; --folder-color-paper: #ffffff; --folder-color-front: #93c5fd" />
+          <rect x="28" y="7" width="80" height="6" rx="3" fill="rgba(74, 60, 49, 0.15)" />
+          <rect x="28" y="15" width="40" height="4" rx="2" fill="rgba(74, 60, 49, 0.05)" />
+        </g>
+        <!-- Item 2 -->
+        <g transform="translate(0, 32)">
+          <rect width="232" height="26" rx="8" class="fill-card border-stroke" style="filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));" />
+          <use href="#folder-icon" x="6" y="6" width="14" height="14" style="--folder-color-back: #3b82f6; --folder-color-paper: #ffffff; --folder-color-front: #93c5fd" />
+          <rect x="28" y="7" width="64" height="6" rx="3" fill="rgba(74, 60, 49, 0.15)" />
+          <rect x="28" y="15" width="48" height="4" rx="2" fill="rgba(74, 60, 49, 0.05)" />
+        </g>
+        <!-- Item 3 -->
+        <g transform="translate(0, 64)">
+          <rect width="232" height="26" rx="8" class="fill-card border-stroke" style="filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));" />
+          <circle cx="13" cy="13" r="5" fill="#f97316" />
+          <rect x="28" y="7" width="96" height="6" rx="3" fill="rgba(74, 60, 49, 0.15)" />
+          <rect x="28" y="15" width="128" height="4" rx="2" fill="rgba(74, 60, 49, 0.05)" />
+        </g>
+        <!-- Item 4 -->
+        <g transform="translate(0, 96)">
+          <rect width="232" height="26" rx="8" class="fill-card border-stroke" style="filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));" />
+          <circle cx="13" cy="13" r="5" fill="#ef4444" />
+          <rect x="28" y="7" width="80" height="6" rx="3" fill="rgba(74, 60, 49, 0.15)" />
+          <rect x="28" y="15" width="112" height="4" rx="2" fill="rgba(74, 60, 49, 0.05)" />
+        </g>
+      </g>
+    </g>
+
+    <!-- Dialog Footer -->
+    <line x1="42" y1="212" x2="298" y2="212" class="stroke-border" stroke-width="1" />
+    <rect x="42" y="212" width="256" height="52" fill="rgba(232, 223, 202, 0.2)" clip-path="url(#dialogClip)" />
+    <g transform="translate(54, 222)">
+      <text x="122" y="18" text-anchor="middle" class="text-xs font-medium fill-muted-foreground" style="font-size: 9px;">Cancel</text>
+      <rect x="150" y="4" width="86" height="24" rx="6" class="import-btn-anim" style="filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));" />
+      <text x="193" y="18" text-anchor="middle" class="text-xs font-medium fill-white" style="font-size: 9px;">Import 4 entries</text>
+    </g>
+  </g>
+
+  <!-- Fake Cursor -->
+  <g class="cursor-anim">
+    <circle cx="3.5" cy="3.5" r="8" class="ping-circle-1" fill="rgba(74, 60, 49, 0.4)" />
+    <circle cx="3.5" cy="3.5" r="8" class="ping-circle-2" fill="rgba(74, 60, 49, 0.4)" />
+    <svg width="20" height="20" viewBox="0 0 24 24">
+      <path fill="var(--foreground)" stroke="var(--foreground)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4.037 4.688a.495.495 0 0 1 .651-.651l16 6.5a.5.5 0 0 1-.063.947l-6.124 1.58a2 2 0 0 0-1.438 1.435l-1.579 6.126a.5.5 0 0 1-.947.063z" />
+    </svg>
+  </g>
+
+  <!-- Bottom Centered Success Toast -->
+  <g class="toastAnim">
+    <rect x="60" y="228" width="220" height="32" rx="16" fill="#ffffff" style="filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.08));" />
+    <use href="#check-icon" x="75" y="237" width="14" height="14" stroke="#16a34a" />
+    <text x="180" y="248.5" text-anchor="middle" class="text-xs font-semibold" fill="#16a34a" style="font-size: 11px;">Successfully imported 4 entries</text>
+  </g>
+</svg>

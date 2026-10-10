@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 240" width="340" height="240">
+  <defs>
+    <style>
+      /* <![CDATA[ */
+      @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&display=swap');
+
+      :root {
+        --background: #f4ecd8;
+        --card: #f9f3e5;
+        --foreground: #4a3c31;
+        --muted: #e8dfca;
+        --muted-foreground: #7c6f64;
+        --border: #dbcdb0;
+        --font-sans: "Manrope", sans-serif;
+        --font-heading: "Fraunces", serif;
+      }
+      
+      text { font-family: var(--font-sans); }
+      
+      .wrapper-bg { fill: var(--muted); fill-opacity: 0.2; stroke: var(--border); stroke-opacity: 0.6; stroke-width: 1; }
+      
+      .font-heading { font-family: var(--font-heading); font-weight: 700; }
+      .text-base { font-size: 16px; }
+      .text-sm { font-size: 14px; }
+      .text-xs { font-size: 11px; }
+      .font-mono { font-family: monospace; font-size: 12px; }
+      .font-medium { font-weight: 500; }
+      .font-semibold { font-weight: 600; }
+      .font-bold { font-weight: 700; }
+      
+      .fill-foreground { fill: var(--foreground); color: var(--foreground); }
+      .fill-muted-foreground { fill: var(--muted-foreground); color: var(--muted-foreground); }
+      .fill-background { fill: var(--background); }
+      .fill-card { fill: var(--card); }
+      .fill-muted { fill: var(--muted); }
+      .fill-white { fill: #ffffff; color: #ffffff; }
+      
+      .stroke-foreground { stroke: var(--foreground); fill: none; }
+      .stroke-muted-foreground { stroke: var(--muted-foreground); fill: none; }
+      .stroke-border { stroke: var(--border); fill: none; }
+      .border-stroke { stroke: var(--border); stroke-width: 1; }
+      
+      .opacity-20 { opacity: 0.2; }
+      .opacity-60 { opacity: 0.6; }
+      
+      .shadow-sm { filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05)); }
+      .shadow-lg { filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2)); }
+
+      .send-bg-anim { animation: sendBgAnim 8s infinite cubic-bezier(0.2, 0.8, 0.2, 1); }
+      .cursor-anim { animation: cursorTransform 8s infinite cubic-bezier(0.2, 0.8, 0.2, 1); }
+      .ping-circle { animation: pingPulse 8s infinite cubic-bezier(0, 0, 0.2, 1); }
+      .dialogBackdrop { animation: dialogBackdrop 8s infinite cubic-bezier(0.2, 0.8, 0.2, 1); }
+      .dialogAnim { animation: dialogAnim 8s infinite cubic-bezier(0.2, 0.8, 0.2, 1); transform-origin: 170px 120px; }
+      .toastAnim { animation: toastAnim 8s infinite cubic-bezier(0.2, 0.8, 0.2, 1); transform-origin: 170px 204px; }
+      .animate-spin { animation: spin 2s linear infinite; transform-origin: 0px 0px; }
+
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      @keyframes sendBgAnim {
+        0%, 20% { fill: var(--background); stroke: rgba(219, 205, 176, 0.5); }
+        25%, 35% { fill: rgba(232, 223, 202, 0.5); stroke: var(--border); }
+        40%, 100% { fill: var(--background); stroke: rgba(219, 205, 176, 0.5); }
+      }
+
+      @keyframes cursorTransform {
+        0%, 10% { transform: translate(280px, 220px) scale(1); }
+        25%, 35% { transform: translate(90px, 108px) scale(0.95); }
+        40%, 65% { transform: translate(260px, 220px) scale(1); }
+        85%, 100% { transform: translate(280px, 220px) scale(1); }
+      }
+
+      @keyframes pingPulse {
+        0%, 25% { transform: scale(1); opacity: 0; }
+        25.1% { transform: scale(1); opacity: 0.4; }
+        35%, 100% { transform: scale(2); opacity: 0; }
+      }
+
+      @keyframes dialogBackdrop {
+        0%, 35% { opacity: 0; pointer-events: none; }
+        40%, 75% { opacity: 1; pointer-events: auto; }
+        80%, 100% { opacity: 0; pointer-events: none; }
+      }
+
+      @keyframes dialogAnim {
+        0%, 35% { opacity: 0; transform: scale(0.95); pointer-events: none; }
+        40%, 75% { opacity: 1; transform: scale(1); pointer-events: auto; }
+        80%, 100% { opacity: 0; transform: scale(0.95); pointer-events: none; }
+      }
+
+      @keyframes toastAnim {
+        0%, 75% { opacity: 0; transform: translateY(20px) scale(0.95); }
+        80%, 95% { opacity: 1; transform: translateY(0) scale(1); }
+        100% { opacity: 0; transform: translateY(20px) scale(0.95); }
+      }
+      /* ]]> */
+    </style>
+
+
+    <clipPath id="dialogClip">
+      <rect x="20" y="16" width="300" height="208" rx="16" />
+    </clipPath>
+
+    <svg id="check-icon" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" stroke="inherit" stroke-width="2" fill="none" />
+      <path d="m16 9-5.5 5.5L8 12" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+
+    <svg id="cloud-download-icon" viewBox="0 0 24 24">
+      <path d="M12 13v8l-4-4" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="m12 21 4-4" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M4.393 15.269A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.436 8.284" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+
+    <svg id="loader-icon" viewBox="0 0 24 24">
+      <path d="M21 12a9 9 0 1 1-6.219-8.56" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+
+    <svg id="send-icon" viewBox="0 0 24 24">
+      <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="m21.854 2.147-10.94 10.939" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+
+    <svg id="x-icon" viewBox="0 0 24 24">
+      <path d="M18 6 6 18" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="m6 6 12 12" stroke="inherit" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </defs>
+
+  <rect width="340" height="240" rx="16" class="wrapper-bg" />
+
+  <!-- Fake App Background (Settings UI) -->
+  <g transform="translate(16, 16)">
+    <!-- Header Section -->
+    <rect width="128" height="12" rx="4" fill="rgba(74, 60, 49, 0.15)" />
+    <rect y="18" width="224" height="8" rx="4" fill="rgba(74, 60, 49, 0.05)" />
+
+    <!-- Grid -->
+    <g transform="translate(0, 42)">
+      <!-- Send Data -->
+      <g>
+        <rect width="148" height="110" rx="12" class="send-bg-anim shadow-sm" stroke-width="1" />
+        <g transform="translate(14, 14)">
+          <rect width="40" height="40" rx="8" class="fill-card shadow-sm" stroke="rgba(219, 205, 176, 0.5)" />
+          <use href="#send-icon" x="12" y="12" width="16" height="16" stroke="var(--foreground)" />
+        </g>
+        <text x="14" y="74" class="text-sm font-medium fill-foreground">Send Data</text>
+        <text x="14" y="90" class="text-xs fill-muted-foreground" style="font-size: 9px;">
+          <tspan x="14" dy="0">Host a connection to send data</tspan>
+        </text>
+      </g>
+
+      <!-- Receive Data -->
+      <g transform="translate(160, 0)" class="opacity-60">
+        <rect width="148" height="110" rx="12" class="fill-background shadow-sm" stroke="rgba(219, 205, 176, 0.5)" stroke-width="1" />
+        <g transform="translate(14, 14)">
+          <rect width="40" height="40" rx="8" class="fill-card shadow-sm" stroke="rgba(219, 205, 176, 0.5)" />
+          <use href="#cloud-download-icon" x="10" y="10" width="20" height="20" stroke="var(--muted-foreground)" />
+        </g>
+        <text x="14" y="74" class="text-sm font-medium fill-foreground">Receive Data</text>
+        <text x="14" y="90" class="text-xs fill-muted-foreground" style="font-size: 9px;">
+          <tspan x="14" dy="0">Connect with code to receive</tspan>
+        </text>
+      </g>
+    </g>
+
+    <!-- Dummy Content -->
+    <g transform="translate(0, 164)" class="opacity-20">
+      <rect width="308" height="40" rx="16" class="border-stroke" fill="rgba(74, 60, 49, 0.05)" />
+      <rect y="52" width="308" height="64" rx="16" class="border-stroke" fill="rgba(74, 60, 49, 0.05)" />
+    </g>
+  </g>
+
+  <!-- Dialog Backdrop -->
+  <rect width="340" height="240" rx="16" class="dialogBackdrop" fill="rgba(244, 236, 216, 0.6)" />
+
+  <!-- The Send Data Dialog -->
+  <g class="dialogAnim">
+    <rect x="20" y="16" width="300" height="208" rx="16" class="border-stroke fill-card shadow-lg" />
+    
+    <!-- Dialog Header -->
+    <g transform="translate(36, 40)">
+      <text x="0" y="0" class="font-heading text-base fill-foreground" style="font-size: 16px;">Send Data</text>
+      <text x="0" y="16" class="text-xs fill-muted-foreground" style="font-size: 10px;">
+        <tspan x="0" dy="0">Enter this code on your other device to connect and</tspan>
+        <tspan x="0" dy="12">transfer your data.</tspan>
+      </text>
+      <use href="#x-icon" x="252" y="-12" width="16" height="16" stroke="var(--muted-foreground)" />
+    </g>
+    
+    <!-- Line separator -->
+    <line x1="20" y1="76" x2="320" y2="76" class="stroke-border" stroke-width="1" />
+
+    <!-- Dialog Content -->
+    <rect x="20" y="76" width="300" height="148" fill="rgba(232, 223, 202, 0.3)" clip-path="url(#dialogClip)" />
+    
+    <g transform="translate(36, 96)">
+      <!-- Code Box -->
+      <rect width="268" height="60" rx="12" class="border-stroke shadow-sm" fill="rgba(232, 223, 202, 0.5)" />
+      <text x="134" y="24" text-anchor="middle" class="text-xs font-bold fill-muted-foreground" style="font-size: 9px; letter-spacing: 2px; text-transform: uppercase;">Your Code</text>
+      <text x="134" y="46" text-anchor="middle" class="font-mono font-bold fill-foreground" style="font-size: 12px; letter-spacing: 0.2em;">P R K J O 4 I W M A</text>
+
+      <!-- Loading State -->
+      <rect y="76" width="268" height="32" rx="10" fill="rgba(74, 60, 49, 0.1)" />
+      <g transform="translate(134, 92)">
+         <g transform="translate(-70, 0)">
+           <g class="animate-spin">
+             <use href="#loader-icon" x="-7" y="-7" width="14" height="14" stroke="var(--foreground)" />
+           </g>
+         </g>
+         <text x="-52" y="3" class="text-xs font-medium fill-foreground" style="font-size: 10px;">Waiting for connection...</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Fake Cursor -->
+  <g class="cursor-anim">
+    <circle cx="3.5" cy="3.5" r="8" class="ping-circle" fill="rgba(74, 60, 49, 0.4)" />
+    <svg width="20" height="20" viewBox="0 0 24 24">
+      <path fill="var(--foreground)" stroke="var(--foreground)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4.037 4.688a.495.495 0 0 1 .651-.651l16 6.5a.5.5 0 0 1-.063.947l-6.124 1.58a2 2 0 0 0-1.438 1.435l-1.579 6.126a.5.5 0 0 1-.947.063z" />
+    </svg>
+  </g>
+
+  <!-- Bottom Centered Success Toast -->
+  <g class="toastAnim">
+    <rect x="100" y="196" width="140" height="28" rx="14" fill="#ffffff" class="shadow-lg" />
+    <use href="#check-icon" x="110" y="203" width="14" height="14" stroke="#16a34a" />
+    <text x="128" y="214" class="text-xs font-semibold" fill="#16a34a" color="#16a34a" style="font-size: 11px;">Transfer Complete!</text>
+  </g>
+</svg>
